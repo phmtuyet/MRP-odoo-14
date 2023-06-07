@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <function model="ks_dashboard_ninja.board"
+                  name="ks_import_dashboard_from_paths">
+            <value>ks_dashboard_ninja/json_data/dashboard_ninja_sale_01.json,
+                ks_dashboard_ninja/json_data/dashboard_ninja_sale_02.json</value>
+        </function>
+    </data>
+</odoo>
