@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mrp_workorder_view_gantt" model="ir.ui.view">
+        <field name="name">mrp.workorder.view.gantt</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_workorder_view_gantt"/>
+        <field name="arch" type="xml">
+            <xpath expr="//gantt" position="attributes">
+                <attribute name="string">Rooms</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mrp.action_mrp_workorder_workcenter">
+        <field name="name">Manufacturing Orders Planning</field>
+    </record>
+
+    <menuitem id="mrp_workorder.menu_mrp_workorder_production" active="False"/>
+
+    <menuitem id="mrp_workorder.menu_mrp_workorder_workcenter"
+              name="Planning by Rooms"
+              sequence="2"
+              action="mrp.action_mrp_workorder_workcenter"
+              parent="mrp_workorder.mrp_workorder_menu_planning"/>
+
+    <menuitem id="mrp_workorder.mrp_workorder_menu_planning"
+              name="Manufacturing Orders"
+              sequence="2"
+              parent="mrp.mrp_planning_menu_root"
+              groups="mrp.group_mrp_routings"/>
+</odoo>
